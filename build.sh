@@ -17,7 +17,7 @@ if ! type u3d > /dev/null 2>&1; then
   fi
 fi
 
-[ ! "$(u3d list | grep $UNITY_VERSION)" ] && $sudo_u3d install $UNITY_VERSION -p Unity,${BUILD_TARGET}
+[ ! "$(u3d list | grep $UNITY_VERSION)" ] && $sudo_u3d available -f && $sudo_u3d install $UNITY_VERSION -p Unity,${BUILD_TARGET}
 
 script_path=$(cd $(dirname $0); pwd)
 project_path=$(cd "$PROJECT_PATH"; pwd)
